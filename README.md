@@ -74,7 +74,74 @@ build
 "start": "node build/server.js",
 "build": "tsup src --out-dir build"
 ```
-8° Instalar lib dotenv
+8° Instalar lib dotenv e zod
 ```
 npm i dotenv
+npm i zod
+```
+9° Instalar eslint
+```
+npm i eslint @rocketseat/eslint-config -D || npm i eslint -D 
+```
+10° Instalar Prisma ORM
+```
+npm i prisma -D 
+```
+
+---
+### O que é um alias de importação no TypeScript?
+```
+Uma forma de importar arquivos no projeto com um nome mais curto
+```
+### Qual o benefício de se utilizar um alias de importação no TypeScript?
+```
+Melhor legibilidade e organização do código, através da utilização de apelidos mais descritivos para caminhos de importação complexos
+```
+### Para que serve o "save-exact" no arquivo .npmrc?
+```
+Uma opção para salvar a versão exata de um pacote instalado
+```
+### O que é ORM (Object-Relational mapping)?
+```
+O mapeamento objeto-relacional é uma técnica usada na criação de uma "ponte" entre programas orientados a objetos e, na maioria dos casos, bancos de dados relacionais
+```
+---
+```bash
+  Set up a new Prisma project
+  $ npx prisma init
+
+  Generate artifacts (e.g. Prisma Client)
+  $ prisma generate
+
+  Browse your data
+  $ prisma studio
+
+  Create migrations from your Prisma schema, apply them to the database, generate artifacts (e.g. Prisma Client)
+  $ prisma migrate dev
+
+  Pull the schema from an existing database, updating the Prisma schema
+  $ prisma db pull
+
+  Push the Prisma schema state to the database
+  $ prisma db push
+
+  Validate your Prisma schema
+  $ prisma validate
+
+  Format your Prisma schema
+  $ prisma format
+
+  Display Prisma version info
+  $ prisma version
+
+  Display Prisma debug info
+  $ prisma debug
+
+```
+### Dependência de produção - para acessar o banco de dados
+npm i @prisma/client
+
+como rodar o Docker 
+```
+docker run --name api-node-solid-pg -e POSTGRESQL_USERNAME=docker -e POSTGRESQL_PASSWORD=docker -e POSTGRESQL_DATABASE=apinodesolid -p 5432:5432 bitnami/postgresql:latest
 ```
