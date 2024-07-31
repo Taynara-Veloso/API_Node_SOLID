@@ -141,7 +141,33 @@ O mapeamento objeto-relacional é uma técnica usada na criação de uma "ponte"
 ### Dependência de produção - para acessar o banco de dados
 npm i @prisma/client
 
-como rodar o Docker 
+comando
+```
+npx prisma migrate dev
+```
+### Docker
+
+#### Como rodar o container pela primeira vez
 ```
 docker run --name api-node-solid-pg -e POSTGRESQL_USERNAME=docker -e POSTGRESQL_PASSWORD=docker -e POSTGRESQL_DATABASE=apinodesolid -p 5432:5432 bitnami/postgresql:latest
+```
+#### Como rodar o container
+```
+docker start api-node-solid-pg
+```
+#### Como parar o container
+```
+docker stop api-node-solid-pg
+```
+#### Como ver todos os containers que estão rodando?
+```
+docker ps
+```
+#### Como mostrar todos os containers que existem?(é possível ver o id do container)
+```
+docker ps -a
+```
+#### Como deletar um container
+```
+docker rm api-node-solid-pg
 ```
