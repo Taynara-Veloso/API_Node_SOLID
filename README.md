@@ -29,7 +29,7 @@
 - [ ] Todas listas de dados precisam estar paginadas com 20 itens por página;
 - [ ] O usuário deve ser identificado por um JWT (JSON Web Token);
 
-#### Ferramentas Utilizadas Neste Projeto
+### Ferramentas Utilizadas Neste Projeto
 - Node API 
 - SOLID
 - TypeScript
@@ -141,7 +141,7 @@ O mapeamento objeto-relacional é uma técnica usada na criação de uma "ponte"
 ### Dependência de produção - para acessar o banco de dados
 npm i @prisma/client
 
-comando
+### comando que gera um novo arquivo de migração
 ```
 npx prisma migrate dev
 ```
@@ -170,4 +170,121 @@ docker ps -a
 #### Como deletar um container
 ```
 docker rm api-node-solid-pg
+```
+---
+
+### O que é o Prisma Client?
+```
+Uma biblioteca de acesso ao banco de dados gerada automaticamente a partir do schema do Prisma
+```
+### Qual o comando do Prisma utilizado para gerar um novo arquivo de migração?
+```
+prisma migrate dev
+```
+### Qual o comando do Prisma utilizado para atualizar o esquema do banco de dados de produção?
+```
+prisma migrate deploy
+```
+### O que é um contêiner Docker?
+```
+Uma aplicação isolada com suas dependências
+```
+### Como os contêineres Docker diferem das máquinas virtuais?
+```
+Os contêineres compartilham o kernel do host, enquanto as máquinas virtuais têm um kernel próprio
+```
+### Qual comando é usado para criar um novo contêiner Docker a partir de uma imagem?
+```
+docker run
+```
+### O que é o Docker Compose?
+```
+Uma ferramenta de gerenciamento de containers que faz parte do Docker
+```
+### Qual comando é usado para criar os containers pela primeira vez pelo Docker Compose?
+```
+docker-compose up
+```
+### Como é representado um relacionamento N para N em um banco de dados relacional?
+```
+Com uma tabela intermediária que registra as associações entre os registros nas duas tabelas.
+```
+## Docker - Common Commands:
+```bash
+  run         Crie e execute um novo contêiner a partir de uma imagem
+  exec        Execute um comando em um contêiner em execução
+  ps          Listar contêineres
+  build       Construa uma imagem a partir de um Dockerfile
+  pull        Baixe uma imagem de um registro
+  push        Carregar uma imagem para um registro
+  images      Listar imagens
+  login       Faça login em um registro
+  logout      Sair de um registro
+  search      Pesquise imagens no Docker Hub
+  version     Mostrar as informações da versão do Docker
+  info        Exibir informações de todo o sistema
+```
+## Management Commands:
+```
+  builder     Gerenciar builds(compilações)
+  buildx*     Docker Buildx
+  checkpoint  Manage checkpoints(Gerenciar pontos de verificação)
+  compose*    Docker Compose(Composição do Docker)
+  container   Gerenciar contêineres
+  context     Gerenciar contextos
+  debug*      Get a shell into any image or container(Coloque um shell em qualquer imagem ou contêiner)
+  desktop*    Comandos do Docker Desktop (Alpha)
+  dev*        Ambientes de desenvolvimento Docker
+  extension*  Gerencia extensões Docker
+  feedback*   Provide feedback, right in your terminal!
+  image       Manage images
+  init*       Creates Docker-related starter files for your project
+  manifest    Manage Docker image manifests and manifest lists
+  network     Manage networks
+  plugin      Manage plugins
+  sbom*       View the packaged-based Software Bill Of Materials (SBOM) for an image
+  scout*      Docker Scout
+  system      Manage Docker
+  trust       Manage trust on Docker images
+  volume      Manage volumes
+```
+## Swarm Commands:
+```
+  config      Manage Swarm configs
+  node        Manage Swarm nodes
+  secret      Manage Swarm secrets
+  service     Manage Swarm services
+  stack       Manage Swarm stacks
+  swarm       Manage Swarm
+```
+## Commands:
+```
+  attach      Attach local standard input, output, and error streams to a running container
+  commit      Create a new image from a container's changes
+  cp          Copy files/folders between a container and the local filesystem
+  create      Create a new container
+  diff        Inspect changes to files or directories on a container's filesystem
+  events      Get real time events from the server
+  export      Export a container's filesystem as a tar archive
+  history     Show the history of an image
+  import      Import the contents from a tarball to create a filesystem image
+  inspect     Return low-level information on Docker objects
+  kill        Kill one or more running containers
+  load        Load an image from a tar archive or STDIN
+  logs        Fetch the logs of a container
+  pause       Pause all processes within one or more containers
+  port        List port mappings or a specific mapping for the container
+  rename      Rename a container
+  restart     Restart one or more containers
+  rm          Remove one or more containers
+  rmi         Remove one or more images
+  save        Save one or more images to a tar archive (streamed to STDOUT by default)
+  start       Start one or more stopped containers
+  stats       Display a live stream of container(s) resource usage statistics
+  stop        Stop one or more running containers
+  tag         Create a tag TARGET_IMAGE that refers to SOURCE_IMAGE
+  top         Display the running processes of a container
+  unpause     Unpause all processes within one or more containers
+  update      Update configuration of one or more containers
+  wait        Block until one or more containers stop, then print their exit codes
 ```
