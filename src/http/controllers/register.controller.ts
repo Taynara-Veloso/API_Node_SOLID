@@ -1,6 +1,7 @@
 import { z } from "zod"
 import { FastifyReply, FastifyRequest } from "fastify"
-import { createUserService } from "@/services/createUser"
+import { RegisterService } from "@/services/register"
+import { PrismaUsersRepository } from "@/repositories/prisma/prisma-users-repository"
 
 export async function registerController(req: FastifyRequest, reply: FastifyReply) {
   const registerBodySchema = z.object({
@@ -12,11 +13,15 @@ export async function registerController(req: FastifyRequest, reply: FastifyRepl
   const { name, email, password } = registerBodySchema.parse(req.body)
 
   try {
-    await createUserService({
-      name, 
-      email, 
+    const usersRepository = new PrismaUsersRepository()
+    const registerService = new RegisterService(usersRepository)
+
+    await registerService.execute({
+      name,
+      email,
       password,
     })
+
   } catch (error) {
     return reply.status(409).send() // erro 409 = Conflito
   }
